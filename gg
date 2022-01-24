@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+void print_random_psw(void)
+{
+	int len = rand() % 8 + 5;
+	while (len--) {
+		putchar(rand() % 26 + 'a');
+	}
+	putchar('\n');
+}
+int main(void)
+{
+	srand((unsigned)time(0));
+	for (int i = 0; i < 10; ++i)
+		print_random_psw();
+}
